@@ -1,0 +1,157 @@
+
+/* 1. CSS Reset (Place at the very beginning) */
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font:inherit;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* 2. Define Global Variables */
+
+:root {
+
+  --clr-primary-400:hsl(216, 15%, 48%);
+  --clr-accent-400:hsl(212, 45%, 89%);
+
+  --clr-neutral-100:hsl(0,0%,100%);
+  --clr-neutral-800:hsl(228, 45%, 44%);
+  --clr-neutral-900:hsl(218,44%,22%);
+  
+
+  --ff-primary:"Outfit", sans-serif;
+
+  --fs-400:0.9375rem;
+  --fs-700:1.375rem;
+
+  --fw-400:400;
+  --fw-700:700;
+
+  --bg-color-body:var(--clr-accent-400);
+  --bg-color-container:var(--clr-neutral-100);
+
+}
+
+/* 3. Utility Classes (if any) */
+
+.text-align-center {
+  text-align: center;
+}
+
+.grid-group{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+/* 4. Base Styles */
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+
+  color:var(--clr-primary-400);
+  background-color:var(--clr-accent-400);
+
+  height:100vh;
+  
+}
+
+h1 {
+  font-size:var(--fs-700);
+  font-weight: var(--fw-700);
+  color:var(--clr-neutral-900);
+}
+
+
+/* 5. Component Styles */
+
+
+/* container styles  */
+
+.container {
+
+  --max-width:345px;
+  --container-margin:1rem;
+
+  width:min(var(--max-width),(100% - var(--container-margin)*2));
+  margin-inline: auto;
+
+  background-color: var(--bg-color-container);
+  padding:1rem 1rem 1rem 1rem;
+
+  border-radius: 20px;
+  margin-block: auto;
+  box-shadow: 0 20px 15px 0px hsla(218,44%,22%,.05);
+}
+
+
+.container figure img {
+  border-radius: 10px;
+}
+.container .qrcode-content {
+  padding:1.5rem;
+  row-gap:1rem;
+}
+
+.qrcode-content .title {
+  line-height:1.2;
+}
+
+.container p {
+  line-height: 1.4;
+  /* padding-block-start: 1rem; */
+}
+
+
+/* footer styles */
+  footer.attribution { font-size: 11px; text-align: center; }
+  footer.attribution a { color: var(--clr-neutral-800); }
+
+
+
+
